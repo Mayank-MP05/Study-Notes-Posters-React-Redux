@@ -6,28 +6,9 @@ import App from "./App";
 //Imports
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-// Actions
-export const increment = () => {
-  return {
-    type: "INC",
-  };
-};
-export const decrement = () => {
-  return {
-    type: "DEC",
-  };
-};
-// Reducers
-const counter = (state = 0, action) => {
-  switch (action.type) {
-    case "INC":
-      return state + 1;
-    case "DEC":
-      return state - 1;
-  }
-  return state;
-};
+import { increment, decrement } from "./actions/counterAction";
 
+import { counter } from "./reducers/counterReducer";
 // Creating Store for Reducer
 let store = createStore(
   counter,
